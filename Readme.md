@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A simple, _unopinionated_ authentication library <br/>
+  A simple, <em>unopinionated</em> authentication library <br/>
   for building Node.js APIs.
 </p>
 <br/>
@@ -36,7 +36,7 @@
 <br/>
 <br/>
 
-Permit makes it easy to add an authentication layer to a Node.js API. It can be used with any of the popular server frameworks (eg. Express, Koa, Hapi, Fastly) and it can be used for any type of API (eg. REST, GraphQL, etc.) due to its unopinionated design.
+Permit makes it easy to add an authentication layer to a Node.js API. It can be used with any of the popular server frameworks (eg. Express, Koa, Hapi, Fastify) and it can be used for any type of API (eg. REST, GraphQL, etc.) due to its unopinionated design.
 
 <br/>
 
@@ -86,7 +86,7 @@ Before Permit, the only real choice for authentication libraries in Node.js was 
 
 * **It isn't focused on authenciating APIs.** Passport is primarly focused on authenticating web apps with services like Facebook, Twitter and GitHub. APIs don't need that type of authentication, so all those extra abstractions result in _lots_ of complexity for no gain.
 
-* **It is tightly-coupled to Express.** If you use Koa, Hapi, Fastly, or some other framework you have to go to great lengths to get it to play nicely. Even if you just want to tweak the opinionated defaults you're often out of luck.
+* **It is tightly-coupled to Express.** If you use Koa, Hapi, Fastify, or some other framework you have to go to great lengths to get it to play nicely. Even if you just want to tweak the opinionated defaults you're often out of luck.
 
 * **Other middleware are tightly-coupled to it.** Passport stores state on the `req` object, so all of your other code (and even other third-party middleware) end up tightly coupling to its implementation, which makes your codebase very brittle.
 
