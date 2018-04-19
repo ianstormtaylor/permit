@@ -6,9 +6,10 @@
 
 class Permit {
   constructor(options = {}) {
-    const { scheme, realm = 'auth' } = options
+    const { scheme, proxy, realm = 'auth' } = options
     this.scheme = scheme
     this.realm = realm
+    this.proxy = proxy
   }
 
   check() {
@@ -16,13 +17,13 @@ class Permit {
   }
 
   fail(res) {
-    const { scheme, realm } = this
+    const { proxy, realm, scheme } = this
     const schemes = Array.isArray(scheme) ? scheme : [scheme]
     res.statusCode = 401
     schemes.forEach(s => {
-      const header = `${s} realm="${realm}"`
-      res.setHeader('www-authenticate', header)
-      res.setHeader('proxy-authenticate', header)
+      const value = `${s} realm="${realm}"`
+      const key = proxy ? 'proxy-authenticate' : 'www-authenticate'
+      res.setHeader(key, value)
     })
   }
 }

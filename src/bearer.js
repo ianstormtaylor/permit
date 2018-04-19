@@ -17,9 +17,9 @@ class Bearer extends Permit {
   }
 
   check(req) {
-    const { basic, query } = this
+    const { basic, query, proxy } = this
     const auth = req.headers
-      ? req.headers.authorization || req.headers['proxy-authorization']
+      ? proxy ? req.headers['proxy-authorization'] : req.headers.authorization
       : null
 
     if (auth) {

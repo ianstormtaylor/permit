@@ -16,9 +16,9 @@ class Basic extends Permit {
   }
 
   check(req) {
-    const { query } = this
+    const { query, proxy } = this
     const auth = req.headers
-      ? req.headers.authorization || req.headers['proxy-authorization']
+      ? proxy ? req.headers['proxy-authorization'] : req.headers.authorization
       : null
 
     if (auth) {
