@@ -1,6 +1,6 @@
-import { BasicPermit } from '../../..'
+import { Basic } from '../../..'
 
-export const permit = new BasicPermit({
+export const permit = new Basic({
   query: 'token',
 })
 

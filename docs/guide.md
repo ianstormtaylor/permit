@@ -21,20 +21,20 @@ npm install --save permit
 And then you can import it into your code base:
 
 ```js
-import { BearerPermit, BasicPermit } from 'permit'
+import { Bearer, Basic } from 'permit'
 ```
 
 ## Creating Permits
 
 Once you've got Permit installed, the next step is to create the type of permit corresponding for the authentication method your API needs:
 
-* The **`BasicPermit`** uses a username and password combination.
-* The **`BearerPermit`** uses a single secret bearer token string.
+* The **`Basic`** permit checks for a username and password combination.
+* The **`Bearer`** permit checks for a single secret bearer token string.
 
 For example, if you want your API to accept secrets:
 
 ```js
-const permit = new BearerPermit({
+const permit = new Bearer({
   basic: 'username',
   query: 'access_token',
 })
@@ -51,7 +51,7 @@ This permit will check a request first for an `Authorization Bearer` token, then
 Or you could have your API accept usernames and passwords:
 
 ```js
-const permit = new BasicPermit({
+const permit = new Basic({
   query: ['username', 'password'],
 })
 

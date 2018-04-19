@@ -41,10 +41,10 @@ Permit makes it easy to add an authentication layer to a Node.js API. It can be 
 Permit lets you easily check for the two authentication schemes most APIs need: a single secret bearer token, or a set of username and password credentials. For example, here's how to configure a bearer token permit:
 
 ```js
-import { BearerPermit } from 'permit'
+import { Bearer } from 'permit'
 
 // A permit that checks for HTTP Bearer Auth, falling back to a query string.
-const permit = new BearerPermit({
+const permit = new Bearer({
   query: 'access_token',
 })
 
@@ -132,8 +132,8 @@ Read the getting started guide to familiarize yourself with how Permit works, or
     * [`permit.check`](./docs/reference.md#permit-check)
     * [`permit.fail`](./docs/reference.md#permit-fail)
   * [Types](./docs/reference.md#types)
-    * [`BasicPermit`](./docs/reference.md#basicpermit)
-    * [`BearerPermit`](./docs/reference.md#bearerpermit)
+    * [`Basic`](./docs/reference.md#basic)
+    * [`Bearer`](./docs/reference.md#bearer)
     * [`Permit`](./docs/reference.md#permit2)
 
 <br/>

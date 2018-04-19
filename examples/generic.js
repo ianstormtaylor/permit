@@ -1,6 +1,6 @@
-import { BearerPermit } from 'permit'
+import { Bearer } from 'permit'
 
-const permit = new BearerPermit({
+const permit = new Bearer({
   basic: 'username', // Also allow a Basic Auth username as a token.
   query: 'access_token', // Also allow an `?access_token=` query parameter.
 })

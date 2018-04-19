@@ -4,8 +4,8 @@
   * [`permit.check`](#permit-check)
   * [`permit.fail`](#permit-fail)
 * [Types](#types)
-  * [`BasicPermit`](#basicpermit)
-  * [`BearerPermit`](#bearerpermit)
+  * [`Basic`](#basic)
+  * [`Bearer`](#bearer)
   * [`Permit`](#permit2)
 
 ## Permit
@@ -44,35 +44,35 @@ It does not dictate what the error response to the client should be.
 The following permit types come packaged with the library...
 
 ```js
-import { BasicPermit, BearerPermit, Permit } from 'permit'
+import { Basic, Bearer, Permit } from 'permit'
 ```
 
-### `BasicPermit`
+### `Basic`
 
 ```js
-import { BasicPermit } from 'permit'
+import { Basic } from 'permit'
 
-const permit = new BasicPermit({
+const permit = new Basic({
   query: Array, // default `null`
 })
 ```
 
-The `BasicPermit` checks for credentials in the form of `username` and `password` strings. This can either be in the form of HTTP Basic Auth, or via a query string.
+The `Basic` permit checks for credentials in the form of `username` and `password` strings. This can either be in the form of HTTP Basic Auth, or via a query string.
 
 * `query` — An optional array of the username and password query parameters keys to check as a fallback.
 
-### `BearerPermit`
+### `Bearer`
 
 ```js
-import { BearerPermit } from 'permit'
+import { Bearer } from 'permit'
 
-const permit = new BearerPermit({
+const permit = new Bearer({
   basic: String,
   query: String.
 })
 ```
 
-The `BearerPermit` checks for credentials in the form of a secret bearer token string. This can either be via HTTP Bearer Auth, via HTTP Basic Auth, or via a query string.
+The `Bearer` permit checks for credentials in the form of a secret bearer token string. This can either be via HTTP Bearer Auth, via HTTP Basic Auth, or via a query string.
 
 * `basic` — Either `'username'` or `'password'` denoting which field of the HTTP Basic Auth to use as a fallback.
 * `query` — A query parameter key to check as a fallback.

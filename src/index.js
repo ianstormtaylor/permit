@@ -1,6 +1,6 @@
 import Permit from './permit'
-import BasicPermit from './basic'
-import BearerPermit from './bearer'
+import Basic from './basic'
+import Bearer from './bearer'
 
 /**
  * Export.
@@ -8,4 +8,4 @@ import BearerPermit from './bearer'
  * @type {Permit}
  */
 
-export { Permit, BasicPermit, BearerPermit }
+export { Permit, Basic, Bearer }

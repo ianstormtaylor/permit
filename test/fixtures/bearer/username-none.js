@@ -1,6 +1,6 @@
-import { BearerPermit } from '../../..'
+import { Bearer } from '../../..'
 
-export const permit = new BearerPermit({
+export const permit = new Bearer({
   basic: 'username',
 })
 

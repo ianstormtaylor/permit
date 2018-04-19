@@ -4,10 +4,10 @@ import Permit from './permit'
 /**
  * A bearer token permit class.
  *
- * @type {BearerPermit}
+ * @type {Bearer}
  */
 
-class BearerPermit extends Permit {
+class Bearer extends Permit {
   constructor(options = {}) {
     const { basic, query, ...rest } = options
     const scheme = basic ? ['Bearer', 'Basic'] : 'Bearer'
@@ -50,7 +50,7 @@ class BearerPermit extends Permit {
 /**
  * Export.
  *
- * @type {BearerPermit}
+ * @type {Bearer}
  */
 
-export default BearerPermit
+export default Bearer

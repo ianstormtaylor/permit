@@ -4,10 +4,10 @@ import Permit from './permit'
 /**
  * A basic authorization permit class.
  *
- * @type {BasicPermit}
+ * @type {Basic}
  */
 
-class BasicPermit extends Permit {
+class Basic extends Permit {
   constructor(options = {}) {
     const { query, ...rest } = options
     const scheme = 'Basic'
@@ -45,7 +45,7 @@ class BasicPermit extends Permit {
 /**
  * Export.
  *
- * @type {BasicPermit}
+ * @type {Basic}
  */
 
-export default BasicPermit
+export default Basic
