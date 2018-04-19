@@ -1,0 +1,59 @@
+{
+  "name": "permit",
+  "description": "A simple, powerful authentication library for building Node.js APIs.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": "git://github.com/ianstormtaylor/permit.git",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "eslint": "^4.12.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-prettier": "^2.5.0",
+    "lodash": "^4.17.4",
+    "mocha": "^4.0.1",
+    "np": "^2.17.0",
+    "prettier": "^1.10.2"
+  },
+  "scripts": {
+    "build": "babel --out-dir ./lib ./src",
+    "clean": "rm -rf ./lib ./node_modules",
+    "lint": "eslint '{src,test}/*' && prettier --list-different '**/*.{js,json,md}'",
+    "prepublish": "yarn build",
+    "prettier": "prettier --write '**/*.{js,json,md}'",
+    "release": "np",
+    "test": "yarn build && yarn lint && mocha --require babel-core/register ./test/index.js",
+    "watch": "yarn build --watch"
+  },
+  "keywords": [
+    "api",
+    "auth",
+    "authentication",
+    "authn",
+    "authorization",
+    "basic",
+    "bearer",
+    "express",
+    "fastly",
+    "graphql",
+    "hapi",
+    "header",
+    "koa",
+    "oauth",
+    "passport",
+    "request",
+    "rest",
+    "server",
+    "token"
+  ]
+}
