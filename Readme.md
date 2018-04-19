@@ -13,7 +13,6 @@
   <a href="#usage">Usage</a> •
   <a href="#why">Why?</a> •
   <a href="#principles">Principles</a> •
-  <a href="#demo">Demo</a> •
   <a href="#examples">Examples</a> •
   <a href="#documentation">Documentation</a>
 </p>
@@ -21,9 +20,6 @@
 <p align="center">
   <a href="https://travis-ci.org/ianstormtaylor/permit">
     <img src="https://travis-ci.org/ianstormtaylor/permit.svg?branch=master">
-  </a>
-  <a href="https://unpkg.com/permit/umd/permit.min.js">
-    <img src="http://img.badgesize.io/https://unpkg.com/permit/umd/permit.min.js?compression=gzip&amp;label=size&amp;maxAge=300">
   </a>
   <a href="./package.json">
     <img src="https://img.shields.io/npm/v/permit.svg?maxAge=300&label=version&colorB=007ec6&maxAge=300">

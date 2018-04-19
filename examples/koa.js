@@ -12,7 +12,7 @@ app.use(async (ctx, next) => {
   const { req, res } = ctx
 
   // Try to find the bearer token in the request.
-  const token = permit.parse(req)
+  const token = permit.check(req)
 
   // No token found, so ask for authentication.
   if (!token) {
@@ -34,7 +34,7 @@ app.use(async (ctx, next) => {
   await next()
 })
 
-app.use(async (ctx) => {
+app.use(async ctx => {
   ctx.body = 'Restricted content!'
 })
 

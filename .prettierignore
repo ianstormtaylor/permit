@@ -1,6 +1,5 @@
 lib/
 node_modules/
-umd/
 .babelrc
 .eslintrc
 package.json

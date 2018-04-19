@@ -8,7 +8,7 @@ const permit = new BearerPermit({
 
 function authenticate(req, res, next) {
   // Try to find the bearer token in the request.
-  const token = permit.parse(req)
+  const token = permit.check(req)
 
   // No token found, so ask for authentication.
   if (!token) {
@@ -17,7 +17,7 @@ function authenticate(req, res, next) {
   }
 
   // Perform your authentication logic however you'd like...
-  db.users.findByToken(token, (err, user) {
+  db.users.findByToken(token, (err, user) => {
     if (err) return next(err)
 
     // No user found, so their token was invalid.

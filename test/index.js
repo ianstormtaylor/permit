@@ -1,6 +1,6 @@
+import MockReq from 'mock-req'
 import assert from 'assert'
 import fs from 'fs'
-import { pick } from 'lodash'
 import { basename, extname, resolve } from 'path'
 
 /**
@@ -25,24 +25,11 @@ describe('permit', () => {
       for (const test of tests) {
         it(test, () => {
           const module = require(resolve(testsDir, test))
-          const { Struct, data } = module
-
-          if ('output' in module) {
-            const expected = module.output
-            const actual = Struct(data)
-            assert.deepEqual(actual, expected)
-          } else if ('error' in module) {
-            const [error] = Struct.validate(data)
-            const actual =
-              error.reason !== undefined || 'reason' in module.error
-                ? pick(error, 'type', 'path', 'value', 'reason')
-                : pick(error, 'type', 'path', 'value')
-            assert.deepEqual(actual, module.error)
-          } else {
-            throw new Error(
-              `The "${test}" fixture did not define an \`output\` or \`error\` export.`
-            )
-          }
+          const { permit, request, credentials } = module
+          const req = new MockReq(request)
+          const actual = permit.check(req)
+          const expected = credentials
+          assert.deepEqual(actual, expected)
         })
       }
     })

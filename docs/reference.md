@@ -1,18 +1,19 @@
 # API Reference
 
 * [Permit](#permit)
-  - [`permit.check`](#permit-check)
-  - [`permit.fail`](#permit-fail)
+  * [`permit.check`](#permit-check)
+  * [`permit.fail`](#permit-fail)
 * [Types](#types)
-  - [`BasicPermit`](#basicpermit)
-  - [`BearerPermit`](#bearerpermit)
-  - [`Permit`](#permit2)
+  * [`BasicPermit`](#basicpermit)
+  * [`BearerPermit`](#bearerpermit)
+  * [`Permit`](#permit2)
 
 ## Permit
 
 Each permit instance has two methods, `check` and `fail`...
 
 ### `permit.check`
+
 `permit.check(req) => credentials`
 
 ```js
@@ -24,6 +25,7 @@ The `check` method takes a Node.js `req` object and checks it for credentials ba
 It does not dictate how the credentials should be validated.
 
 ### `permit.fail`
+
 `permit.fail(res) => undefined`
 
 ```js
@@ -42,11 +44,7 @@ It does not dictate what the error response to the client should be.
 The following permit types come packaged with the library...
 
 ```js
-import { 
-  BasicPermit,
-  BearerPermit,
-  Permit,
-} from 'permit'
+import { BasicPermit, BearerPermit, Permit } from 'permit'
 ```
 
 ### `BasicPermit`
@@ -61,7 +59,7 @@ const permit = new BasicPermit({
 
 The `BasicPermit` checks for credentials in the form of `username` and `password` strings. This can either be in the form of HTTP Basic Auth, or via a query string.
 
-- `query` — An optional array of the username and password query parameters keys to check as a fallback.
+* `query` — An optional array of the username and password query parameters keys to check as a fallback.
 
 ### `BearerPermit`
 
@@ -76,8 +74,8 @@ const permit = new BearerPermit({
 
 The `BearerPermit` checks for credentials in the form of a secret bearer token string. This can either be via HTTP Bearer Auth, via HTTP Basic Auth, or via a query string.
 
-- `basic` — Either `'username'` or `'password'` denoting which field of the HTTP Basic Auth to use as a fallback.
-- `query` — A query parameter key to check as a fallback.
+* `basic` — Either `'username'` or `'password'` denoting which field of the HTTP Basic Auth to use as a fallback.
+* `query` — A query parameter key to check as a fallback.
 
 ### `Permit`
 

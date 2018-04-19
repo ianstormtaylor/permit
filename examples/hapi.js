@@ -18,7 +18,7 @@ server.route({
     const { req, res } = request.raw
 
     // Try to find the bearer token in the request.
-    const token = permit.parse(req)
+    const token = permit.check(req)
 
     // No token found, so ask for authentication.
     if (!token) {

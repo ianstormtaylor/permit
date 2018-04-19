@@ -5,9 +5,9 @@ const permit = new BearerPermit({
   query: 'access_token', // Also allow an `?access_token=` query parameter.
 })
 
-async function handler(req, res) {
+async function handler({ req, res }) {
   // Try to find the bearer token in the request.
-  const token = permit.parse(req)
+  const token = permit.check(req)
 
   // No token found, so ask for authentication.
   if (!token) {

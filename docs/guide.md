@@ -28,8 +28,8 @@ import { BearerPermit, BasicPermit } from 'permit'
 
 Once you've got Permit installed, the next step is to create the type of permit corresponding for the authentication method your API needs:
 
-- The **`BasicPermit`** uses a username and password combination.
-- The **`BearerPermit`** uses a single secret bearer token string.
+* The **`BasicPermit`** uses a username and password combination.
+* The **`BearerPermit`** uses a single secret bearer token string.
 
 For example, if you want your API to accept secrets:
 

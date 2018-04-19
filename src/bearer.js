@@ -1,4 +1,3 @@
-
 import Url from 'url'
 import Permit from './permit'
 
@@ -9,7 +8,6 @@ import Permit from './permit'
  */
 
 class BearerPermit extends Permit {
-
   constructor(options = {}) {
     const { basic, query, ...rest } = options
     const scheme = basic ? ['Bearer', 'Basic'] : 'Bearer'
@@ -18,14 +16,14 @@ class BearerPermit extends Permit {
     this.query = query
   }
 
-  parse(req) {
+  check(req) {
     const { basic, query } = this
     const auth = req.headers
       ? req.headers.authorization || req.headers['proxy-authorization']
       : null
 
     if (auth) {
-      const [ scheme, credentials ] = auth.split(' ')
+      const [scheme, credentials] = auth.split(' ')
 
       if (scheme === 'Bearer') {
         return credentials
@@ -33,7 +31,7 @@ class BearerPermit extends Permit {
 
       if (basic && scheme === 'Basic') {
         const ascii = Buffer.from(credentials, 'base64').toString('ascii')
-        const [ username, password ] = ascii.split(':')
+        const [username, password] = ascii.split(':')
         if (basic === 'username') return username
         if (basic === 'password') return password
       }
@@ -47,7 +45,6 @@ class BearerPermit extends Permit {
       }
     }
   }
-
 }
 
 /**
