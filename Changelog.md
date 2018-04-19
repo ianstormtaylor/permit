@@ -4,6 +4,6 @@ This document maintains a list of changes to the `permit` package with each new 
 
 ---
 
-### `0.1.0` — April 19, 2018
+### `0.1.0` — April 18, 2018
 
 :tada:
