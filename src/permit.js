@@ -19,7 +19,7 @@ class Permit {
   fail(res) {
     const { proxy, realm, scheme } = this
     const schemes = Array.isArray(scheme) ? scheme : [scheme]
-    res.statusCode = 401
+    res.statusCode = proxy ? 407 : 401
     schemes.forEach(s => {
       const value = `${s} realm="${realm}"`
       const key = proxy ? 'proxy-authenticate' : 'www-authenticate'
