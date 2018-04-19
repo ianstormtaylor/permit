@@ -1,7 +1,7 @@
 {
   "name": "permit",
   "description": "An unopinionated authentication library for building Node.js APIs.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "repository": "git://github.com/ianstormtaylor/permit.git",
   "main": "./lib/index.js",
