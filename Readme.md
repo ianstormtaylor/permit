@@ -138,6 +138,12 @@ Read the getting started guide to familiarize yourself with how Permit works, or
 
 <br/>
 
+### Thanks
+
+Thank you to [@dresende](https://github.com/dresende) for graciously transferring the `permit` package!
+
+<br/>
+
 ### License
 
 This package is [MIT-licensed](./License.md).
