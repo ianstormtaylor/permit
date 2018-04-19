@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  A simple, <em>unopinionated</em> authentication library <br/>
-  for building Node.js APIs.
+  A simple, <em>unopinionated</em> library <br/>
+  for authenticating Node.js APIs.
 </p>
 <br/>
 <br/>
