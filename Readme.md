@@ -104,7 +104,7 @@ Which brings me to how Permit solves these issues...
 
 3. **Framework agnostic.** Permit doesn't lock you into using any specific server framework or data model, because it's composed of small but powerful utility functions that do the heavy-lifting for you.
 
-4. **Unopinionated interface.** Due to it's simple interface, Permit makes it much easier to write and reason about your actual authentication logic, because it's exactly like writing any other route handler for your API.
+4. **Unopinionated interface.** Due to its simple interface, Permit makes it much easier to write and reason about your actual authentication logic, because it's exactly like writing any other route handler for your API.
 
 <br/>
 
