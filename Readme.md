@@ -80,7 +80,7 @@ Since Permit isn't tightly coupled to a framework or data model, it gives you co
 
 Before Permit, the only real choice for authentication libraries in Node.js was [Passport.js](http://www.passportjs.org/). But it has a bunch of issues that complicate your codebase...
 
-* **It is not focused on authenciating APIs.** Passport is focused on authenticating _web apps_ with services like Facebook, Twitter and GitHub. APIs don't need that, so all the extra bloat means _lots_ of complexity for no gain.
+* **It is not focused on authenticating APIs.** Passport is focused on authenticating _web apps_ with services like Facebook, Twitter and GitHub. APIs don't need that, so all the extra bloat means _lots_ of complexity for no gain.
 
 * **It is tightly-coupled to Express.** If you use Koa, Hapi, Fastify, or some other framework you have to go to great lengths to get it to play nicely. Even if you just want to tweak the opinionated defaults you're often out of luck.
 
