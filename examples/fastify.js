@@ -7,6 +7,7 @@ const permit = new Bearer({
 })
 
 const fastify = Fastify()
+
 fastify.decorateRequest('user', null)
 
 fastify.addHook('preHandler', async (request, reply) => {
@@ -33,7 +34,7 @@ fastify.addHook('preHandler', async (request, reply) => {
 })
 
 fastify.get('/restricted', async (req, reply) => {
-  content: 'Restricted content!'
+  return 'Restricted content!'
 })
 
 fastify.listen(3000)
