@@ -29,9 +29,11 @@ fastify.addHook('preHandler', async (request, reply) => {
   }
 
   // Authentication succeeded, save the context and proceed...
-  req.user = user
+  request.user = user
 })
 
-fastify.get('/restricted', async (req, reply) => { content: 'Restricted content!' })
+fastify.get('/restricted', async (req, reply) => {
+  content: 'Restricted content!'
+})
 
 fastify.listen(3000)
