@@ -7,17 +7,16 @@ const permit = new Bearer({
 })
 
 const fastify = Fastify()
+fastify.decorateRequest('user', null)
 
-fastify.use(async (ctx, next) => {
-  const { req, res } = ctx
-
+fastify.addHook('preHandler', async (request, reply) => {
   // Try to find the bearer token in the request.
-  const token = permit.check(req)
+  const token = permit.check(request.raw)
 
   // No token found, so ask for authentication.
   if (!token) {
-    permit.fail(res)
-    throw new Error(`Authentication required!`)
+    permit.fail(reply.res)
+    throw new Error('Authentication required!')
   }
 
   // Perform your authentication logic however you'd like...
@@ -25,17 +24,14 @@ fastify.use(async (ctx, next) => {
 
   // No user found, so their token was invalid.
   if (!user) {
-    permit.fail(res)
-    throw new Error(`Authentication invalid!`)
+    permit.fail(reply.res)
+    throw new Error('Authentication invalid!')
   }
 
   // Authentication succeeded, save the context and proceed...
-  ctx.user = user
-  await next()
+  req.user = user
 })
 
-fastify.get('/restricted', async ctx => {
-  ctx.body = 'Restricted content!'
-})
+fastify.get('/restricted', async (req, reply) => { content: 'Restricted content!' })
 
 fastify.listen(3000)
