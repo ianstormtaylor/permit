@@ -1,12 +1,6 @@
 import Url from 'url'
 import Permit from './permit'
 
-/**
- * A bearer token permit class.
- *
- * @type {Bearer}
- */
-
 class Bearer extends Permit {
   constructor(options = {}) {
     const { basic, query, ...rest } = options
@@ -46,11 +40,5 @@ class Bearer extends Permit {
     }
   }
 }
-
-/**
- * Export.
- *
- * @type {Bearer}
- */
 
 export default Bearer

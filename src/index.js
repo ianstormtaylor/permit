@@ -1,11 +1,3 @@
-import Permit from './permit'
-import Basic from './basic'
-import Bearer from './bearer'
-
-/**
- * Export.
- *
- * @type {Permit}
- */
-
-export { Permit, Basic, Bearer }
+export { default as Permit } from './permit'
+export { default as Basic } from './basic'
+export { default as Bearer } from './bearer'

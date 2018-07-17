@@ -1,9 +1,3 @@
-/**
- * The base `Permit` class to be extended.
- *
- * @type {Permit}
- */
-
 class Permit {
   constructor(options = {}) {
     const { scheme, proxy, realm = 'auth' } = options
@@ -27,11 +21,5 @@ class Permit {
     })
   }
 }
-
-/**
- * Export.
- *
- * @type {Permit}
- */
 
 export default Permit
