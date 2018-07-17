@@ -64,13 +64,15 @@ import { Bearer } from 'permit'
 
 const permit = new Bearer({
   basic: String,
-  query: String.
+  header: String,
+  query: String,
 })
 ```
 
 The `Bearer` permit checks for credentials in the form of a secret bearer token string. This can either be via HTTP Bearer Auth, via HTTP Basic Auth, or via a query string.
 
 * `basic` — Either `'username'` or `'password'` denoting which field of the HTTP Basic Auth to use as a fallback.
+* `header` — A custom header key to check as a fallback.
 * `query` — A query parameter key to check as a fallback.
 
 ### `Permit`
