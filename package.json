@@ -8,7 +8,6 @@
   "files": [
     "lib"
   ],
-  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.26.0",

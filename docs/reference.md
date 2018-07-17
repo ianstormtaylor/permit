@@ -52,14 +52,10 @@ import { Basic, Bearer, Permit } from 'permit'
 ```js
 import { Basic } from 'permit'
 
-const permit = new Basic({
-  query: Array, // default `null`
-})
+const permit = new Basic()
 ```
 
-The `Basic` permit checks for credentials in the form of `username` and `password` strings. This can either be in the form of HTTP Basic Auth, or via a query string.
-
-* `query` — An optional array of the username and password query parameters keys to check as a fallback.
+The `Basic` permit checks for credentials in the form of `username` and `password` strings, in the form of HTTP Basic Auth.
 
 ### `Bearer`
 

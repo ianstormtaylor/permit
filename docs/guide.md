@@ -51,10 +51,7 @@ This permit will check a request first for an `Authorization Bearer` token, then
 Or you could have your API accept usernames and passwords:
 
 ```js
-const permit = new Basic({
-  query: ['username', 'password'],
-})
-
+const permit = new Basic()
 const credentials = permit.check(req)
 
 if (credentials) {
@@ -63,7 +60,7 @@ if (credentials) {
 }
 ```
 
-This permit will check a request first for an `Authorization Basic` username and password, falling back to `?username=&password=` query string parameters. Again, all customizable.
+This permit will check a request for an `Authorization Basic` username and password.
 
 ## Writing Authentication Logic
 
