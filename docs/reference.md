@@ -17,7 +17,7 @@ Each permit instance has two methods, `check` and `fail`...
 `permit.check(req) => credentials`
 
 ```js
-const credentials = permit.check(res)
+const credentials = permit.check(req)
 ```
 
 The `check` method takes a Node.js `req` object and checks it for credentials based on the permit's configuration, returning any credentials it finds.
