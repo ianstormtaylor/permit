@@ -3,16 +3,17 @@ import Permit from './permit'
 
 class Bearer extends Permit {
   constructor(options = {}) {
-    const { basic, header, query, ...rest } = options
+    const { basic, header, query, cookie, ...rest } = options
     const scheme = basic ? ['Bearer', 'Basic'] : 'Bearer'
     super({ scheme, ...rest })
     this.basic = basic
     this.header = header
     this.query = query
+    this.cookie = cookie
   }
 
   check(req) {
-    const { basic, header, query, proxy } = this
+    const { basic, header, query, proxy, cookie } = this
     const auth = req.headers
       ? proxy ? req.headers['proxy-authorization'] : req.headers.authorization
       : null
@@ -51,6 +52,16 @@ class Bearer extends Permit {
 
       if (query in parsed.query) {
         return parsed.query[query]
+      }
+    }
+
+    if (cookie) {
+      const cookies = req.headers ? req.headers.cookie : null
+      if (cookies) {
+        const cookieObj = this.parseCookies(cookies)
+        if (cookieObj.hasOwnProperty(cookie)) {
+          return cookieObj[cookie]
+        }
       }
     }
   }

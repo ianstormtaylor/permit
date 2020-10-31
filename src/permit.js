@@ -20,6 +20,14 @@ class Permit {
       res.setHeader(key, value)
     })
   }
+
+  parseCookies(cookieString) {
+    const rx = /([^;=\s]*)=([^;]*)/g
+    const obj = {}
+    for (let m; (m = rx.exec(cookieString)); )
+      obj[m[1]] = decodeURIComponent(m[2])
+    return obj
+  }
 }
 
 export default Permit

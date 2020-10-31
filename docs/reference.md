@@ -66,6 +66,7 @@ const permit = new Bearer({
   basic: String,
   header: String,
   query: String,
+  cookie: String,
 })
 ```
 
@@ -74,6 +75,7 @@ The `Bearer` permit checks for credentials in the form of a secret bearer token 
 * `basic` — Either `'username'` or `'password'` denoting which field of the HTTP Basic Auth to use as a fallback.
 * `header` — A custom header key to check as a fallback.
 * `query` — A query parameter key to check as a fallback.
+* `cookie` — A cookie parameter key to check as a fallback.
 
 ### `Permit`
 
